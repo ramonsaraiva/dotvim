@@ -50,7 +50,7 @@ set colorcolumn=100
 colorscheme gruvbox
 set laststatus=2
 
-set listchars=tab:»-,trail:·,precedes:<,extends:>,
+set listchars=tab:»-,trail:·,precedes:<,extends:>,eol:¬
 set list
 
 " custom mappings
@@ -64,6 +64,8 @@ map <space> viw
 
 " plugin settings
 let NERDTreeIgnore=['\.pyc$', '\~$']
+
+let g:gruvbox_contrast_dark='soft'
 
 command UseBikeDev :%s/res\//www\/res\/
 command UseBikeProd :%s/www\/res\//res\/
