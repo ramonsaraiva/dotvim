@@ -53,8 +53,14 @@ set laststatus=2
 set listchars=tab:»-,trail:·,precedes:<,extends:>,
 set list
 
-" custom keys
-call togglebg#map("<F5>")
+" custom mappings
+call togglebg#map('<F5>')
+
+" nerdtree
+map <F4> :NERDTree<CR>
+
+" select word with space
+map <space> viw
 
 " plugin settings
 let NERDTreeIgnore=['\.pyc$', '\~$']
