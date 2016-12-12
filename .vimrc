@@ -13,8 +13,9 @@ Plugin 'kien/ctrlp.vim'
 
 " ui
 Plugin 'vim-airline/vim-airline'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive' " git
+Plugin 'airblade/vim-gitgutter' " git
+Plugin 'davidhalter/jedi-vim' " py autocomplete
 
 " colorschemes
 Plugin 'altercation/vim-colors-solarized'
@@ -41,6 +42,8 @@ let python_highlight_all=1
 syntax on
 
 autocmd FileType python set autoindent
+autocmd FileType python set smartindent
+autocmd FileType python set textwidth=79
 
 set backspace=indent,eol,start
 
@@ -50,13 +53,19 @@ set colorcolumn=100
 colorscheme gruvbox
 set laststatus=2
 
-set listchars=tab:»-,trail:·,precedes:<,extends:>,eol:¬
+set listchars=tab:▷,trail:·,nbsp:·,precedes:<,extends:>,eol:¬
 set list
+
+set mouse=a
 
 " custom mappings
 call togglebg#map('<F5>')
 
 " nerdtree
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
+let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
+let NERDTreeShowBookmarks=1
 map <F4> :NERDTree<CR>
 
 " select word with space
