@@ -53,7 +53,7 @@ set colorcolumn=100
 colorscheme gruvbox
 set laststatus=2
 
-set listchars=tab:▷,trail:·,nbsp:·,precedes:<,extends:>,eol:¬
+set listchars=tab:▷-,trail:·,nbsp:·,precedes:<,extends:>,eol:¬
 set list
 
 set mouse=a
