@@ -16,6 +16,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive' " git
 Plugin 'airblade/vim-gitgutter' " git
 Plugin 'davidhalter/jedi-vim' " py autocomplete
+Plugin 'lepture/vim-jinja' " jinja
 
 " colorschemes
 Plugin 'altercation/vim-colors-solarized'
