@@ -69,13 +69,11 @@ let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
 map <F4> :NERDTree<CR>
 
-" select word with space
-map <space> viw
+" jedi
+let g:jedi#popup_on_dot = 0
 
-" plugin settings
-let NERDTreeIgnore=['\.pyc$', '\~$']
-
+" gruvbox
 let g:gruvbox_contrast_dark='soft'
 
-command UseBikeDev :%s/res\//www\/res\/
-command UseBikeProd :%s/www\/res\//res\/
+" select word with space
+map <space> viw
