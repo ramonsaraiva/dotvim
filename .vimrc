@@ -45,6 +45,7 @@ syntax on
 autocmd FileType python set autoindent
 autocmd FileType python set smartindent
 autocmd FileType python set textwidth=79
+autocmd FileType python set colorcolumn=79
 
 set backspace=indent,eol,start
 
@@ -53,6 +54,9 @@ set background=dark
 set colorcolumn=100
 colorscheme gruvbox
 set laststatus=2
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 
 set listchars=tab:▷-,trail:·,nbsp:·,precedes:<,extends:>,eol:¬
 set list
