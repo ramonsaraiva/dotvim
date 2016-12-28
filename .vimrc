@@ -62,15 +62,11 @@ set list
 
 set mouse=a
 
-" custom mappings
-call togglebg#map('<F5>')
-
 " nerdtree
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
-map <F4> :NERDTree<CR>
 
 " jedi
 let g:jedi#popup_on_dot = 0
@@ -78,5 +74,8 @@ let g:jedi#popup_on_dot = 0
 " gruvbox
 let g:gruvbox_contrast_dark='soft'
 
-" select word with space
+" mappings
+map <F4> :NERDTree<CR>
 map <space> viw
+
+:command Debug :normal i import ipdb; ipdb.set_trace()<ESC>
