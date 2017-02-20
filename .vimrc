@@ -16,6 +16,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive' " git
 Plugin 'airblade/vim-gitgutter' " git
 Plugin 'lepture/vim-jinja' " jinja
+Plugin 'majutsushi/tagbar'
 
 " colorschemes
 Plugin 'altercation/vim-colors-solarized'
@@ -77,5 +78,6 @@ let g:gruvbox_contrast_dark='soft'
 " mappings
 map <F4> :NERDTree<CR>
 map <space> viw
+map <F8> :TagbarToggle<CR>
 
 :command Debug :normal i import ipdb; ipdb.set_trace()<ESC>
