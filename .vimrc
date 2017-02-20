@@ -17,6 +17,7 @@ Plugin 'tpope/vim-fugitive' " git
 Plugin 'airblade/vim-gitgutter' " git
 Plugin 'lepture/vim-jinja' " jinja
 Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdcommenter'
 
 " colorschemes
 Plugin 'altercation/vim-colors-solarized'
@@ -68,6 +69,10 @@ let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
+
+" nerdcommenter
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
 
 " jedi
 let g:jedi#popup_on_dot = 0
