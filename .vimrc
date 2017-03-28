@@ -30,7 +30,7 @@ filetype plugin indent on
 set noswapfile 
 
 " line numbers
-set nu
+set relativenumber
 
 " tab as spaces
 set tabstop=4
@@ -52,7 +52,7 @@ set backspace=indent,eol,start
 
 set t_Co=256
 set background=dark
-set colorcolumn=100
+set colorcolumn=79
 colorscheme gruvbox
 set laststatus=2
 
