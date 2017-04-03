@@ -3,7 +3,7 @@ filetype off
 call plug#begin('~/.local/share/nvim/plugged')
 
 " files
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'do': 'NERDTreeToggle' }
 Plug 'kien/ctrlp.vim'
 
 " syntax
