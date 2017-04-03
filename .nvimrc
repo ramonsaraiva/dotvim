@@ -80,9 +80,6 @@ let NERDTreeShowBookmarks=1
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 
-" jedi
-let g:jedi#popup_on_dot = 0
-
 " gruvbox
 let g:gruvbox_contrast_dark='soft'
 
