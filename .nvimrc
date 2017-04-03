@@ -4,7 +4,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " files
 Plug 'scrooloose/nerdtree', { 'do': 'NERDTreeToggle' }
-Plug 'kien/ctrlp.vim'
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim' " fuzzy finder
 
 " syntax
 Plug 'neomake/neomake'
@@ -87,8 +87,9 @@ let g:NERDCompactSexyComs = 1
 let g:gruvbox_contrast_dark='soft'
 
 " mappings
-map <F4> :NERDTree<CR>
-map <space> viw
-map <F8> :TagbarToggle<CR>
+noremap <F4> :NERDTree<CR>
+noremap <space> viw
+noremap <F8> :TagbarToggle<CR>
+noremap <silent> <C-p> :FZF -m<cr>
 
 :command Debug :normal i import ipdb; ipdb.set_trace()<ESC>
