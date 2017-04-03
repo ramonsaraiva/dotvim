@@ -6,8 +6,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
 
-" py
-Plug 'vim-syntastic/syntastic'
+" syntax
+Plug 'neomake/neomake'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " ui
 Plug 'vim-airline/vim-airline'
@@ -62,6 +63,12 @@ set listchars=tab:\|_,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set list
 
 set mouse=a
+
+" neomake
+autocmd! BufWritePost * Neomake
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
 
 " nerdtree
 let NERDTreeChDirMode=2
