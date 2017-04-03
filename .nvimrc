@@ -57,7 +57,8 @@ set laststatus=2
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
-set listchars=tab:▷-,trail:·,nbsp:·,precedes:<,extends:>,eol:¬
+set showbreak=↪\ 
+set listchars=tab:\|_,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set list
 
 set mouse=a
