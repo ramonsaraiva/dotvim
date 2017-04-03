@@ -6,6 +6,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
 
+" py
+Plug 'vim-syntastic/syntastic'
+
 " ui
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive' " git
