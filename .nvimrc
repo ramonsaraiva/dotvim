@@ -22,6 +22,7 @@ Plug 'scrooloose/nerdcommenter'
 " colorschemes
 Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
 
 call plug#end()
 
@@ -56,14 +57,13 @@ set colorcolumn=79
 colorscheme gruvbox
 set laststatus=2
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
-
 set showbreak=↪\ 
 set listchars=tab:\|_,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 set list
 
 set mouse=a
+
+set formatoptions-=t
 
 " neomake
 autocmd! BufWritePost * Neomake

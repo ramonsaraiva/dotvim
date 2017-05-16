@@ -64,6 +64,8 @@ set list
 
 set mouse=a
 
+set formatoptions-=t
+
 " nerdtree
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
