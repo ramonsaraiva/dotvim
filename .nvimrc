@@ -10,6 +10,7 @@ Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim' " fuzzy finder
 Plug 'neomake/neomake'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
+Plug 'ervandew/supertab'
 
 " ui
 Plug 'vim-airline/vim-airline'
@@ -72,6 +73,7 @@ autocmd! BufWritePost * Neomake
 let g:python_host_prog = '/Users/ramon/.pyenv/versions/2.7.10/envs/neovim2/bin/python'
 let g:python3_host_prog = '/Users/ramon/.pyenv/versions/3.5.0/envs/neovim3/bin/python'
 let g:deoplete#enable_at_startup = 1
+set completeopt-=preview
 
 " nerdtree
 let NERDTreeChDirMode=2
