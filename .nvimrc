@@ -29,6 +29,7 @@ call plug#end()
 
 filetype plugin indent on
 
+language en_US
 set noswapfile 
 
 " line numbers
