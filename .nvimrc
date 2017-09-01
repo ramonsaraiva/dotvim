@@ -14,6 +14,7 @@ Plug 'ervandew/supertab'
 
 " ui
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive' " git
 Plug 'airblade/vim-gitgutter' " git
 Plug 'lepture/vim-jinja' " jinja
@@ -88,6 +89,9 @@ let g:NERDCompactSexyComs = 1
 
 " gruvbox
 let g:gruvbox_contrast_dark='soft'
+
+" airline
+let g:airline_theme='onedark'
 
 " mappings
 noremap <F4> :NERDTree<CR>
