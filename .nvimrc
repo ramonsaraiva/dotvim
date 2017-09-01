@@ -20,6 +20,7 @@ Plug 'airblade/vim-gitgutter' " git
 Plug 'lepture/vim-jinja' " jinja
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
+Plug 'junegunn/goyo.vim'
 
 " colorschemes
 Plug 'altercation/vim-colors-solarized'
