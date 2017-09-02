@@ -99,5 +99,6 @@ noremap <F4> :NERDTree<CR>
 noremap <space> viw
 noremap <F8> :TagbarToggle<CR>
 noremap <silent> <C-p> :FZF -m<cr>
+noremap <F5> :Ag<CR>
 
 :command Debug :normal i import ipdb; ipdb.set_trace()<ESC>
