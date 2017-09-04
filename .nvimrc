@@ -19,8 +19,11 @@ Plug 'tpope/vim-fugitive' " git
 Plug 'airblade/vim-gitgutter' " git
 Plug 'lepture/vim-jinja' " jinja
 Plug 'majutsushi/tagbar'
-Plug 'scrooloose/nerdcommenter'
+
+" text
 Plug 'junegunn/goyo.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'godlygeek/tabular'
 
 " colorschemes
 Plug 'altercation/vim-colors-solarized'
