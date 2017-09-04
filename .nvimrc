@@ -76,6 +76,8 @@ set formatoptions-=t
 " neomake
 autocmd! BufWritePost * Neomake
 
+let mapleader=','
+
 " deoplete
 let g:python_host_prog = '/Users/ramon/.pyenv/versions/2.7.10/envs/neovim2/bin/python'
 let g:python3_host_prog = '/Users/ramon/.pyenv/versions/3.5.0/envs/neovim3/bin/python'
@@ -99,11 +101,11 @@ let g:gruvbox_contrast_dark='soft'
 let g:airline_theme='onedark'
 
 " mappings
-noremap <F2> :vsplit $MYVIMRC<cr>
-noremap <F3> :source $MYVIMRC<cr>
-noremap <F4> :NERDTree<cr>
-noremap <F5> :Ag<cr>
-noremap <F8> :TagbarToggle<cr>
+noremap <leader>rc :vsplit $MYVIMRC<cr>
+noremap <leader>rcs :source $MYVIMRC<cr>
+noremap <leader>n :NERDTree<cr>
+noremap <leader>f :Ag<cr>
+noremap <leader>t :TagbarToggle<cr>
 noremap <space> viw
 noremap <silent> <C-p> :FZF -m<cr>
 
