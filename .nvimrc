@@ -25,6 +25,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
 Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-surround'
 
 " colorschemes
 Plug 'altercation/vim-colors-solarized'
