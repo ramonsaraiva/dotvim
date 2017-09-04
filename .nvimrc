@@ -108,6 +108,7 @@ noremap <leader>rcs :source $MYVIMRC<cr>
 noremap <leader>n :NERDTree<cr>
 noremap <leader>f :Ag<cr>
 noremap <leader>t :TagbarToggle<cr>
+noremap <leadeR>gb :Gblame<cr>
 noremap <silent> <C-p> :FZF -m<cr>
 
 " tabs and panes
