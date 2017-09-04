@@ -24,6 +24,7 @@ Plug 'majutsushi/tagbar'
 Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
+Plug 'mattn/emmet-vim'
 
 " colorschemes
 Plug 'altercation/vim-colors-solarized'
