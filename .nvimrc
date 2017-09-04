@@ -65,6 +65,7 @@ set background=dark
 set colorcolumn=79
 colorscheme gruvbox
 set laststatus=2
+set cursorline
 
 set showbreak=↪\ 
 set listchars=tab:\|_,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
