@@ -101,12 +101,21 @@ let g:gruvbox_contrast_dark='soft'
 let g:airline_theme='onedark'
 
 " mappings
+noremap <space> viw
+noremap <leader>a =ip
 noremap <leader>rc :vsplit $MYVIMRC<cr>
 noremap <leader>rcs :source $MYVIMRC<cr>
 noremap <leader>n :NERDTree<cr>
 noremap <leader>f :Ag<cr>
 noremap <leader>t :TagbarToggle<cr>
-noremap <space> viw
 noremap <silent> <C-p> :FZF -m<cr>
+
+" tabs and panes
+noremap <S-l> gt
+noremap <S-h> gT
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
 
 :command Debug :normal iimport ipdb; ipdb.set_trace()<ESC>
