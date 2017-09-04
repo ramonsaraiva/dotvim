@@ -95,10 +95,12 @@ let g:gruvbox_contrast_dark='soft'
 let g:airline_theme='onedark'
 
 " mappings
-noremap <F4> :NERDTree<CR>
+noremap <F2> :vsplit $MYVIMRC<cr>
+noremap <F3> :source $MYVIMRC<cr>
+noremap <F4> :NERDTree<cr>
+noremap <F5> :Ag<cr>
+noremap <F8> :TagbarToggle<cr>
 noremap <space> viw
-noremap <F8> :TagbarToggle<CR>
 noremap <silent> <C-p> :FZF -m<cr>
-noremap <F5> :Ag<CR>
 
-:command Debug :normal i import ipdb; ipdb.set_trace()<ESC>
+:command Debug :normal iimport ipdb; ipdb.set_trace()<ESC>
