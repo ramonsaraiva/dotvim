@@ -110,10 +110,13 @@ noremap <leader>rcs :source $MYVIMRC<cr>
 noremap <leader>n :NERDTree<cr>
 noremap <leader>f :Ag<cr>
 noremap <leader>t :TagbarToggle<cr>
-noremap <leadeR>gb :Gblame<cr>
+noremap <leader>gb :Gblame<cr>
 noremap <silent> <C-p> :FZF -m<cr>
+noremap <leader>q :q<cr>
 
 " tabs and panes
+noremap <leader>v <C-w>v<cr>
+noremap <leader>h <C-w>n<cr>
 noremap <S-l> gt
 noremap <S-h> gT
 noremap <C-l> <C-w>l
