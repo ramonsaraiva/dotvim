@@ -107,7 +107,7 @@ noremap <space> viw
 noremap <leader>a =ip
 noremap <leader>rc :vsplit $MYVIMRC<cr>
 noremap <leader>rcs :source $MYVIMRC<cr>
-noremap <leader>pr :vsplit ~/.cfg/.pr_template<cr>
+noremap <leader>pr :!cp -rf ~/.cfg/.pr_template /tmp/.pr_template<cr><cr>:vsplit /tmp/.pr_template<cr>
 noremap <leader>n :NERDTree<cr>
 noremap <leader>f :Ag<cr>
 noremap <leader>t :TagbarToggle<cr>
