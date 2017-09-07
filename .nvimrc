@@ -108,6 +108,7 @@ noremap <leader>a =ip
 noremap <leader>rc :vsplit $MYVIMRC<cr>
 noremap <leader>rcs :source $MYVIMRC<cr>
 noremap <leader>pr :!cp -rf ~/.cfg/.pr_template /tmp/.pr_template<cr><cr>:vsplit /tmp/.pr_template<cr>:Goyo<cr>
+noremap <leader>jt :!cp -rf ~/.cfg/.jira_template /tmp/.jira_template<cr><cr>:vsplit /tmp/.jira_template<cr>:Goyo<cr>
 noremap <leader>n :NERDTree<cr>
 noremap <leader>f :Ag<cr>
 noremap <leader>t :TagbarToggle<cr>
