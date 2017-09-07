@@ -112,6 +112,7 @@ noremap <leader>n :NERDTree<cr>
 noremap <leader>f :Ag<cr>
 noremap <leader>t :TagbarToggle<cr>
 noremap <leader>gb :Gblame<cr>
+noremap <leader>go :Goyo<cr>
 noremap <silent> <C-p> :FZF -m<cr>
 noremap <leader>q :q<cr>
 
