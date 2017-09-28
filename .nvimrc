@@ -80,6 +80,9 @@ autocmd! BufWritePost * Neomake
 
 let mapleader=','
 
+" fzf
+let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
+
 " deoplete
 let g:python_host_prog = '/Users/ramon/.pyenv/versions/2.7.10/envs/neovim2/bin/python'
 let g:python3_host_prog = '/Users/ramon/.pyenv/versions/3.5.0/envs/neovim3/bin/python'
@@ -88,7 +91,7 @@ set completeopt-=preview
 
 " nerdtree
 let NERDTreeChDirMode=2
-let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
+let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$', 'harvest_*']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
 
