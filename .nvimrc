@@ -15,9 +15,9 @@ Plug 'ervandew/supertab'
 " ui
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive' " git
-Plug 'airblade/vim-gitgutter' " git
-Plug 'lepture/vim-jinja' " jinja
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'lepture/vim-jinja'
 Plug 'majutsushi/tagbar'
 Plug 'luochen1990/rainbow'
 
@@ -66,7 +66,7 @@ set backspace=indent,eol,start
 
 set t_Co=256
 set background=dark
-set colorcolumn=79
+set colorcolumn=79,100
 colorscheme gruvbox
 set laststatus=2
 set cursorline
@@ -94,10 +94,10 @@ let g:deoplete#enable_at_startup = 0
 set completeopt-=preview
 
 " nerdtree
-let NERDTreeChDirMode=2
-let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$', 'harvest_*']
-let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
-let NERDTreeShowBookmarks=1
+let NERDTreeChDirMode = 2
+let NERDTreeIgnore = ['\.vim$', '\~$', '\.pyc$', '\.swp$', 'harvest_*']
+let NERDTreeSortOrder = ['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
+let NERDTreeShowBookmarks = 1
 
 " nerdcommenter
 let g:NERDSpaceDelims = 1
@@ -107,10 +107,10 @@ let g:NERDCompactSexyComs = 1
 let g:rainbow_active = 1
 
 " gruvbox
-let g:gruvbox_contrast_dark='soft'
+let g:gruvbox_contrast_dark = 'soft'
 
 " airline
-let g:airline_theme='onedark'
+let g:airline_theme = 'onedark'
 
 " mappings
 noremap <space> viw
@@ -120,6 +120,7 @@ noremap <leader>rcs :source $MYVIMRC<cr>
 noremap <leader>pr :!cp -rf ~/.cfg/.pr_template /tmp/.pr_template<cr><cr>:vsplit /tmp/.pr_template<cr>:Goyo<cr>
 noremap <leader>jt :!cp -rf ~/.cfg/.jira_template /tmp/.jira_template<cr><cr>:vsplit /tmp/.jira_template<cr>:Goyo<cr>
 noremap <leader>n :NERDTree<cr>
+noremap <leader>A :Ag<space>
 noremap <leader>f :Ag<cr>
 noremap <leader>t :TagbarToggle<cr>
 noremap <leader>gb :Gblame<cr>
