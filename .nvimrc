@@ -19,6 +19,7 @@ Plug 'tpope/vim-fugitive' " git
 Plug 'airblade/vim-gitgutter' " git
 Plug 'lepture/vim-jinja' " jinja
 Plug 'majutsushi/tagbar'
+Plug 'luochen1990/rainbow'
 
 " text
 Plug 'junegunn/goyo.vim'
@@ -98,6 +99,9 @@ let NERDTreeShowBookmarks=1
 " nerdcommenter
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
+
+" rainbow
+let g:rainbow_active = 1
 
 " gruvbox
 let g:gruvbox_contrast_dark='soft'
