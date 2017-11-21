@@ -34,13 +34,12 @@ Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
 
 " clojure
-Plug 'guns/vim-clojure-static',                    { 'for': 'clojure' }
-Plug 'clojure-vim/async-clj-highlight',            { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace',                        { 'for': 'clojure' }
 Plug 'tpope/vim-salve',                            { 'for': 'clojure' }
+Plug 'guns/vim-clojure-static',                    { 'for': 'clojure' }
+Plug 'clojure-vim/async-clj-highlight',            { 'for': 'clojure' }
 Plug 'guns/vim-sexp',                              { 'for': 'clojure' }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
-Plug 'clojure-vim/acid.nvim',                      { 'do': ':UpdateRemotePlugins' }
 Plug 'clojure-vim/async-clj-omni',                 { 'for': 'clojure' }
 
 call plug#end()
