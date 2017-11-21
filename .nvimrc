@@ -33,6 +33,9 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
 
+" not entirely sure
+Plug 'tpope/vim-fireplace'
+
 call plug#end()
 
 filetype plugin indent on
