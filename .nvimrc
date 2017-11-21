@@ -33,8 +33,14 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
 
-" not entirely sure
-Plug 'tpope/vim-fireplace'
+" clojure
+Plug 'guns/vim-clojure-static',                    { 'for': 'clojure' }
+Plug 'clojure-vim/async-clj-highlight',            { 'for': 'clojure' }
+Plug 'tpope/vim-salve',                            { 'for': 'clojure' }
+Plug 'guns/vim-sexp',                              { 'for': 'clojure' }
+Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
+Plug 'clojure-vim/acid.nvim',                      { 'do': ':UpdateRemotePlugins' }
+Plug 'clojure-vim/async-clj-omni',                 { 'for': 'clojure' }
 
 call plug#end()
 
@@ -91,6 +97,8 @@ let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
 let g:python_host_prog = '/Users/ramon/.pyenv/versions/2.7.10/envs/neovim2/bin/python'
 let g:python3_host_prog = '/Users/ramon/.pyenv/versions/3.5.0/envs/neovim3/bin/python'
 let g:deoplete#enable_at_startup = 0
+let g:deoplete#keyword_patterns = {}
+let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 set completeopt-=preview
 
 " nerdtree
