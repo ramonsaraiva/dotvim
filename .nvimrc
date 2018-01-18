@@ -33,6 +33,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
 Plug 'joshdick/onedark.vim'
+Plug 'dracula/vim'
+Plug 'gosukiwi/vim-atom-dark'
 
 " clojure
 Plug 'tpope/vim-fireplace',                        { 'for': 'clojure' }
@@ -71,9 +73,12 @@ autocmd FileType python set colorcolumn=79
 
 set backspace=indent,eol,start
 
+" colorscheme settings
+let g:gruvbox_contrast_dark = 'soft'
+
 set t_Co=256
-set background=dark
 set colorcolumn=79,100
+set background=dark
 colorscheme onedark
 set laststatus=2
 set cursorline
@@ -114,9 +119,6 @@ let g:NERDCompactSexyComs = 1
 
 " rainbow
 let g:rainbow_active = 1
-
-" gruvbox
-let g:gruvbox_contrast_dark = 'soft'
 
 " airline
 let g:airline_theme = 'onedark'
