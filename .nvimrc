@@ -136,6 +136,7 @@ noremap <leader>gb :Gblame<cr>
 noremap <leader>go :Goyo<cr>
 noremap <silent> <C-p> :FZF -m<cr>
 noremap <leader>u :RunTests<cr>
+noremap <leader>d :normal iimport ipdb; ipdb.set_trace()<ESC>
 noremap <leader>q :q<cr>
 
 " tabs and panes
@@ -147,5 +148,3 @@ noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
-
-:command Debug :normal iimport ipdb; ipdb.set_trace()<ESC>
