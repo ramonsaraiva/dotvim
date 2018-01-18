@@ -32,6 +32,7 @@ Plug 'tpope/vim-surround'
 Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
+Plug 'joshdick/onedark.vim'
 
 " clojure
 Plug 'tpope/vim-fireplace',                        { 'for': 'clojure' }
@@ -73,7 +74,7 @@ set backspace=indent,eol,start
 set t_Co=256
 set background=dark
 set colorcolumn=79,100
-colorscheme gruvbox
+colorscheme onedark
 set laststatus=2
 set cursorline
 
