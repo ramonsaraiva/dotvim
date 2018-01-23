@@ -78,7 +78,7 @@ set backspace=indent,eol,start
 let g:gruvbox_contrast_dark = 'soft'
 
 set t_Co=256
-set colorcolumn=79,100
+set colorcolumn=80,90
 set background=dark
 colorscheme onedark
 set laststatus=2
