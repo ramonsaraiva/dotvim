@@ -20,6 +20,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'lepture/vim-jinja'
 Plug 'majutsushi/tagbar'
 Plug 'luochen1990/rainbow'
+Plug 'lepture/vim-jinja'
 
 " text
 Plug 'junegunn/goyo.vim'
