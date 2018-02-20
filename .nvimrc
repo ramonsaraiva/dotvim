@@ -77,7 +77,7 @@ set backspace=indent,eol,start
 let g:gruvbox_contrast_dark = 'soft'
 
 set t_Co=256
-set colorcolumn=79,100
+set colorcolumn=80,100
 set background=dark
 colorscheme onedark
 set laststatus=2
@@ -102,7 +102,7 @@ let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
 " deoplete
 let g:python_host_prog = '/Users/ramon/.pyenv/versions/2.7.10/envs/neovim2/bin/python'
 let g:python3_host_prog = '/Users/ramon/.pyenv/versions/3.5.0/envs/neovim3/bin/python'
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
 let g:deoplete#keyword_patterns = {}
 let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 set completeopt-=preview
