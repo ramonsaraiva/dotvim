@@ -20,6 +20,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'lepture/vim-jinja'
 Plug 'majutsushi/tagbar'
 Plug 'luochen1990/rainbow'
+Plug 'lepture/vim-jinja'
 
 " text
 Plug 'junegunn/goyo.vim'
@@ -77,7 +78,7 @@ set backspace=indent,eol,start
 let g:gruvbox_contrast_dark = 'soft'
 
 set t_Co=256
-set colorcolumn=80,100
+set colorcolumn=80,90
 set background=dark
 colorscheme onedark
 set laststatus=2
