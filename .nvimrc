@@ -4,7 +4,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " files
 Plug 'scrooloose/nerdtree', { 'do': 'NERDTreeToggle' }
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim' " fuzzy finder
+Plug '~/.fzf' " fuzzy finder
+Plug 'rking/ag.vim'
 
 " syntax
 Plug 'neomake/neomake'
@@ -50,11 +51,19 @@ call plug#end()
 
 filetype plugin indent on
 
-language en_US
+language en_US.UTF8
+set nobackup
 set noswapfile 
+set hidden
+
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
 
 " line numbers
-set relativenumber
+set number
+set ruler
 
 " tab as spaces
 set tabstop=4
