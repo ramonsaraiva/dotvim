@@ -141,8 +141,7 @@ noremap <leader>rcs :source $MYVIMRC<cr>
 noremap <leader>pr :!cp -rf ~/.cfg/.pr_template /tmp/.pr_template<cr><cr>:vsplit /tmp/.pr_template<cr>:Goyo<cr>
 noremap <leader>jt :!cp -rf ~/.cfg/.jira_template /tmp/.jira_template<cr><cr>:vsplit /tmp/.jira_template<cr>:Goyo<cr>
 noremap <leader>n :NERDTree<cr>
-noremap <leader>A :Ag<space>
-noremap <leader>f :Ag<cr>
+noremap <leader>f :Ag<space>
 noremap <leader>t :TagbarToggle<cr>
 noremap <leader>gb :Gblame<cr>
 noremap <leader>go :Goyo<cr>
@@ -150,6 +149,8 @@ noremap <silent> <C-p> :FZF -m<cr>
 noremap <leader>u :RunTests<cr>
 noremap <leader>d :normal iimport ipdb; ipdb.set_trace()<ESC>
 noremap <leader>q :q<cr>
+noremap <leader>w :w<cr>
+noremap <silent> ,/ :nohlsearch<CR>
 
 " tabs and panes
 noremap <leader>v <C-w>v<cr>
