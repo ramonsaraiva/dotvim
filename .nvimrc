@@ -47,6 +47,11 @@ Plug 'guns/vim-sexp',                              { 'for': 'clojure' }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'clojure-vim/async-clj-omni',                 { 'for': 'clojure' }
 
+" javascript
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'w0rp/ale'
+
 call plug#end()
 
 filetype plugin indent on
@@ -105,9 +110,6 @@ set formatoptions-=t
 autocmd! BufWritePost * Neomake
 
 let mapleader=','
-
-" fzf
-let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
 
 " deoplete
 let g:python_host_prog = '/Users/ramon/.pyenv/versions/2.7.10/envs/neovim2/bin/python'
