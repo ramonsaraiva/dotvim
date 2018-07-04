@@ -37,6 +37,7 @@ Plug 'tomasr/molokai'
 Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim'
 Plug 'gosukiwi/vim-atom-dark'
+Plug 'nightsense/vimspectr'
 
 " clojure
 Plug 'tpope/vim-fireplace',                        { 'for': 'clojure' }
@@ -57,8 +58,11 @@ call plug#end()
 filetype plugin indent on
 
 language en_US.UTF8
+
 set nobackup
+set nowritebackup
 set noswapfile 
+set noel
 set hidden
 
 set ignorecase
@@ -69,6 +73,7 @@ set incsearch
 " line numbers
 set number
 set ruler
+set relativenumber
 
 " tab as spaces
 set tabstop=4
