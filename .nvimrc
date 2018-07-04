@@ -59,11 +59,13 @@ filetype plugin indent on
 
 language en_US.UTF8
 
+set title
 set nobackup
 set nowritebackup
 set noswapfile 
 set noel
 set hidden
+set autoread
 
 set ignorecase
 set smartcase
