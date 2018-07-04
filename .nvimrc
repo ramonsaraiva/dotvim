@@ -63,7 +63,7 @@ set title
 set nobackup
 set nowritebackup
 set noswapfile 
-set noel
+set noeol
 set hidden
 set autoread
 
@@ -141,6 +141,7 @@ let g:rainbow_active = 1
 
 " airline
 let g:airline_theme = 'onedark'
+let g:airline_left_sep = '▶'
 
 " mappings
 noremap <space> viw
