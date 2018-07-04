@@ -142,6 +142,12 @@ let g:rainbow_active = 1
 " airline
 let g:airline_theme = 'onedark'
 let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline_section_y = ''
+let g:airline_section_x = ''
 
 " mappings
 noremap <space> viw
