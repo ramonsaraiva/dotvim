@@ -93,6 +93,8 @@ autocmd FileType python set smartindent
 autocmd FileType python set textwidth=79
 autocmd FileType python set colorcolumn=79
 
+autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2
+
 set backspace=indent,eol,start
 
 " colorscheme settings
