@@ -151,6 +151,9 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_section_y = ''
 let g:airline_section_x = ''
 
+" emmet
+let g:user_emmet_leader_key=','
+
 " mappings
 noremap <space> viw
 noremap <leader>a =ip
