@@ -131,7 +131,7 @@ set completeopt-=preview
 
 " nerdtree
 let NERDTreeChDirMode = 2
-let NERDTreeIgnore = ['\.vim$', '\~$', '\.pyc$', '\.swp$', 'harvest_*']
+let NERDTreeIgnore = ['\.vim$', '\~$', '\.pyc$', '\.swp$', 'harvest_*', 'node_modules']
 let NERDTreeSortOrder = ['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks = 1
 
