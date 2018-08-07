@@ -4,8 +4,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " files
 Plug 'scrooloose/nerdtree', { 'do': 'NERDTreeToggle' }
-Plug '~/.fzf' " fuzzy finder
-Plug 'rking/ag.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
 
 " syntax
 Plug 'neomake/neomake'
@@ -94,6 +94,7 @@ autocmd FileType python set textwidth=79
 autocmd FileType python set colorcolumn=79
 
 autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType css set tabstop=2 shiftwidth=2 softtabstop=2
 
 set backspace=indent,eol,start
 
@@ -103,7 +104,7 @@ let g:gruvbox_contrast_dark = 'soft'
 set t_Co=256
 set colorcolumn=80,90
 set background=dark
-colorscheme onedark
+colorscheme gruvbox
 set laststatus=2
 set cursorline
 
@@ -134,6 +135,15 @@ let NERDTreeIgnore = ['\.vim$', '\~$', '\.pyc$', '\.swp$', 'harvest_*']
 let NERDTreeSortOrder = ['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks = 1
 
+" ctrlp
+let g:ctrlp_user_command = 'rg --files %s'
+let g:ctrlp_use_caching = 0
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_switch_bufffer = 'et'
+
+" ack
+let g:ackprg = 'rg -S --vimgrep --no-heading'
+
 " nerdcommenter
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
@@ -162,11 +172,10 @@ noremap <leader>rcs :source $MYVIMRC<cr>
 noremap <leader>pr :!cp -rf ~/.cfg/.pr_template /tmp/.pr_template<cr><cr>:vsplit /tmp/.pr_template<cr>:Goyo<cr>
 noremap <leader>jt :!cp -rf ~/.cfg/.jira_template /tmp/.jira_template<cr><cr>:vsplit /tmp/.jira_template<cr>:Goyo<cr>
 noremap <leader>n :NERDTree<cr>
-noremap <leader>f :Ag<space>
+noremap <leader>f :Ack<space>
 noremap <leader>t :TagbarToggle<cr>
 noremap <leader>gb :Gblame<cr>
 noremap <leader>go :Goyo<cr>
-noremap <silent> <C-p> :FZF -m<cr>
 noremap <leader>u :RunTests<cr>
 noremap <leader>d :normal iimport ipdb; ipdb.set_trace()<ESC>
 noremap <leader>q :q<cr>
