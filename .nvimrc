@@ -53,6 +53,11 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'w0rp/ale'
 
+" elixir
+Plug 'elixir-editors/vim-elixir',    {'for': 'elixir'}
+Plug 'slashmili/alchemist.vim',      {'for': 'elixir'}
+
+
 call plug#end()
 
 filetype plugin indent on
