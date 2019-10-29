@@ -109,7 +109,7 @@ let g:gruvbox_contrast_dark = 'soft'
 set t_Co=256
 set colorcolumn=80,90
 set background=dark
-colorscheme gruvbox
+colorscheme onedark
 set laststatus=2
 set cursorline
 
