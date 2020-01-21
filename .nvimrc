@@ -57,6 +57,9 @@ Plug 'w0rp/ale'
 Plug 'elixir-editors/vim-elixir',    {'for': 'elixir'}
 Plug 'slashmili/alchemist.vim',      {'for': 'elixir'}
 
+" elm
+Plug 'ElmCast/elm-vim',              {'for': 'elm'}
+
 
 call plug#end()
 
