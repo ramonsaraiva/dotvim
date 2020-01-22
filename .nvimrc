@@ -38,6 +38,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim'
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'nightsense/vimspectr'
+Plug 'cormacrelf/vim-colors-github'
 
 " clojure
 Plug 'tpope/vim-fireplace',                        { 'for': 'clojure' }
@@ -62,7 +63,11 @@ call plug#end()
 
 filetype plugin indent on
 
-language en_US.UTF8
+if has('macunix')
+    language en_US
+else
+    language en_US.UTF
+endif
 
 set title
 set nobackup
