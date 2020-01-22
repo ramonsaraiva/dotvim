@@ -58,6 +58,9 @@ Plug 'w0rp/ale'
 Plug 'elixir-editors/vim-elixir',    {'for': 'elixir'}
 Plug 'slashmili/alchemist.vim',      {'for': 'elixir'}
 
+" elm
+Plug 'ElmCast/elm-vim',              {'for': 'elm'}
+
 
 call plug#end()
 
@@ -132,9 +135,9 @@ autocmd! BufWritePost * Neomake
 let mapleader=','
 
 " deoplete
-let g:python_host_prog = '/home/ramon/.pyenv/versions/2.7.15/envs/neovim2/bin/python'
-let g:python3_host_prog = '/home/ramon/.pyenv/versions/3.6.5/envs/neovim3/bin/python'
-let g:deoplete#enable_at_startup = 0
+let g:python_host_prog = '/home/ramon/.pyenv/versions/2.7.17/bin/python'
+let g:python3_host_prog = '/home/ramon/.pyenv/versions/3.8.1/bin/python'
+let g:deoplete#enable_at_startup = 1
 let g:deoplete#keyword_patterns = {}
 let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 set completeopt-=preview
