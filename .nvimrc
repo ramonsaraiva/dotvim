@@ -11,6 +11,7 @@ Plug 'mileszs/ack.vim'
 Plug 'neomake/neomake'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
+Plug 'pbogut/deoplete-elm'
 Plug 'ervandew/supertab'
 
 " ui
