@@ -108,6 +108,8 @@ autocmd FileType python set colorcolumn=79
 
 autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType css set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType elm set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
 set backspace=indent,eol,start
 
