@@ -70,7 +70,7 @@ filetype plugin indent on
 if has('macunix')
     language en_US
 else
-    language en_US.UTF
+    language en_US.UTF-8
 endif
 
 set title
