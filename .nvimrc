@@ -39,6 +39,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim'
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'nightsense/vimspectr'
+Plug 'cormacrelf/vim-colors-github'
 
 " clojure
 Plug 'tpope/vim-fireplace',                        { 'for': 'clojure' }
@@ -66,7 +67,11 @@ call plug#end()
 
 filetype plugin indent on
 
-language en_US.UTF8
+if has('macunix')
+    language en_US
+else
+    language en_US.UTF
+endif
 
 set title
 set nobackup
@@ -104,6 +109,8 @@ autocmd FileType python set colorcolumn=79
 
 autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType css set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType elm set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
 set backspace=indent,eol,start
 
