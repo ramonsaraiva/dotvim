@@ -30,6 +30,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
+Plug 'vim-python/python-syntax'
+Plug 'ehamberg/vim-cute-python'
 
 " colorschemes
 Plug 'altercation/vim-colors-solarized'
@@ -40,6 +42,8 @@ Plug 'dracula/vim'
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'nightsense/vimspectr'
 Plug 'cormacrelf/vim-colors-github'
+Plug 'junegunn/seoul256.vim'
+Plug 'w0ng/vim-hybrid'
 
 " clojure
 Plug 'tpope/vim-fireplace',                        { 'for': 'clojure' }
@@ -61,6 +65,9 @@ Plug 'slashmili/alchemist.vim',      {'for': 'elixir'}
 
 " elm
 Plug 'ElmCast/elm-vim',              {'for': 'elm'}
+
+" vue
+Plug 'posva/vim-vue',                {'for': 'vue'}
 
 
 call plug#end()
@@ -111,11 +118,14 @@ autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType css set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType elm set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType vue set tabstop=2 shiftwidth=2 softtabstop=2
 
 set backspace=indent,eol,start
 
 " colorscheme settings
 let g:gruvbox_contrast_dark = 'soft'
+
+au Colorscheme * :hi Keyword gui=italic cterm=italic
 
 set t_Co=256
 set colorcolumn=80,90
@@ -169,13 +179,12 @@ let g:rainbow_active = 1
 
 " airline
 let g:airline_theme = 'onedark'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline_section_y = ''
-let g:airline_section_x = ''
+"let g:airline_section_y = ''
+"let g:airline_section_x = ''
+let g:airline_powerline_fonts = 1
 
 " emmet
 let g:user_emmet_leader_key=','
@@ -185,6 +194,8 @@ noremap <space> viw
 noremap <leader>a =ip
 noremap <leader>rc :vsplit $MYVIMRC<cr>
 noremap <leader>rcs :source $MYVIMRC<cr>
+noremap <leader>rx :vsplit ~/.cfg/.Xresources<cr>
+noremap <leader>rxs :!xrdb ~/.cfg/.Xresources<cr>
 noremap <leader>pr :!cp -rf ~/.cfg/.pr_template /tmp/.pr_template<cr><cr>:vsplit /tmp/.pr_template<cr>:Goyo<cr>
 noremap <leader>jt :!cp -rf ~/.cfg/.jira_template /tmp/.jira_template<cr><cr>:vsplit /tmp/.jira_template<cr>:Goyo<cr>
 noremap <leader>n :NERDTree<cr>
