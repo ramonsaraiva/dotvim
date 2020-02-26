@@ -128,17 +128,25 @@ let g:gruvbox_contrast_dark = 'soft'
 let g:onedark_termcolors = 256
 let g:onedark_terminal_italics = 1
 
+" this is experimental
+" TODO: probably use python-specific `syns`
+augroup colorextend
+    autocmd!
+    autocmd FileType python call onedark#extend_highlight("Identifier", { "gui": "italic" })
+    autocmd FileType python call onedark#extend_highlight("Repeat", { "gui": "italic" })
+    autocmd FileType python call onedark#extend_highlight("Type", { "gui": "italic" })
+    autocmd FileType python call onedark#extend_highlight("Define", { "gui": "italic" })
+    autocmd FileType python call onedark#extend_highlight("Structure", { "gui": "italic" })
+    autocmd FileType python call onedark#extend_highlight("Constant", { "gui": "italic" })
+    autocmd FileType python call onedark#extend_highlight("Special", { "gui": "italic" })
+augroup END
+
 set t_Co=256
 set colorcolumn=80,90
 set background=dark
 colorscheme onedark
 set laststatus=2
 set cursorline
-
-augroup colorextend
-    autocmd!
-    autocmd ColorScheme * call onedark#extend_highlight("Identifier", { "gui": "italic" })
-augroup END
 
 set showbreak=↪\ 
 set listchars=tab:\|_,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
@@ -201,6 +209,7 @@ noremap <leader>a =ip
 noremap <leader>rc :vsplit $MYVIMRC<cr>
 noremap <leader>rx :vsplit ~/.cfg/.Xresources<cr>
 noremap <leader>rxs :!xrdb ~/.cfg/.Xresources<cr>
+noremap <leader>ra :vsplit ~/.cfg/.alacritty.yml<cr>
 noremap <leader>pr :!cp -rf ~/.cfg/.pr_template /tmp/.pr_template<cr><cr>:vsplit /tmp/.pr_template<cr>:Goyo<cr>
 noremap <leader>jt :!cp -rf ~/.cfg/.jira_template /tmp/.jira_template<cr><cr>:vsplit /tmp/.jira_template<cr>:Goyo<cr>
 noremap <leader>n :NERDTree<cr>
