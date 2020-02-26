@@ -1,4 +1,5 @@
 filetype off
+set termguicolors
 
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -124,8 +125,8 @@ set backspace=indent,eol,start
 
 " colorscheme settings
 let g:gruvbox_contrast_dark = 'soft'
-
-au Colorscheme * :hi Keyword gui=italic cterm=italic
+let g:onedark_termcolors = 256
+let g:onedark_terminal_italics = 1
 
 set t_Co=256
 set colorcolumn=80,90
@@ -133,6 +134,11 @@ set background=dark
 colorscheme onedark
 set laststatus=2
 set cursorline
+
+augroup colorextend
+    autocmd!
+    autocmd ColorScheme * call onedark#extend_highlight("Identifier", { "gui": "italic" })
+augroup END
 
 set showbreak=↪\ 
 set listchars=tab:\|_,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
@@ -193,7 +199,6 @@ let g:user_emmet_leader_key=','
 noremap <space> viw
 noremap <leader>a =ip
 noremap <leader>rc :vsplit $MYVIMRC<cr>
-noremap <leader>rcs :source $MYVIMRC<cr>
 noremap <leader>rx :vsplit ~/.cfg/.Xresources<cr>
 noremap <leader>rxs :!xrdb ~/.cfg/.Xresources<cr>
 noremap <leader>pr :!cp -rf ~/.cfg/.pr_template /tmp/.pr_template<cr><cr>:vsplit /tmp/.pr_template<cr>:Goyo<cr>
@@ -218,3 +223,8 @@ noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
+
+augroup reload_vimrc
+    autocmd!
+    autocmd! BufWritePost $MYVIMRC,$MYGVIMRC nested source %
+augroup END
