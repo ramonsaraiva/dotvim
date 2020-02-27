@@ -12,7 +12,7 @@ Plug 'mileszs/ack.vim'
 Plug 'neomake/neomake'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
-Plug 'pbogut/deoplete-elm'
+Plug 'pbogut/deoplete-elm',   { 'for': 'elm' }
 Plug 'ervandew/supertab'
 
 " ui
@@ -32,7 +32,7 @@ Plug 'godlygeek/tabular'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'vim-python/python-syntax'
-Plug 'ehamberg/vim-cute-python'
+" Plug 'ehamberg/vim-cute-python'
 
 " colorschemes
 Plug 'altercation/vim-colors-solarized'
@@ -97,7 +97,10 @@ set incsearch
 " line numbers
 set number
 set ruler
-set relativenumber
+if has('macunix') == 0
+    " relativenumber is really slow on macvim
+    set relativenumber
+endif
 
 " tab as spaces
 set tabstop=4
@@ -146,7 +149,10 @@ set colorcolumn=80,90
 set background=dark
 colorscheme onedark
 set laststatus=2
-set cursorline
+if has('macunix') == 0
+    " cursorline is really slow on macvim
+    set cursorline
+endif
 
 set showbreak=↪\ 
 set listchars=tab:\|_,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
@@ -164,7 +170,11 @@ let mapleader=','
 " deoplete
 let g:python_host_prog = '/home/ramon/.pyenv/versions/2.7.17/bin/python'
 let g:python3_host_prog = '/home/ramon/.pyenv/versions/3.8.1/bin/python'
-let g:deoplete#enable_at_startup = 1
+
+if has('macunix') == 0
+    " deoplete is PROBABLY also slow on mac
+    let g:deoplete#enable_at_startup = 1
+endif
 let g:deoplete#keyword_patterns = {}
 let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 set completeopt-=preview
