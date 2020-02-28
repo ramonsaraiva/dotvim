@@ -45,6 +45,9 @@ Plug 'cormacrelf/vim-colors-github'
 Plug 'junegunn/seoul256.vim'
 Plug 'w0ng/vim-hybrid'
 
+" other
+Plug 'kevinhui/vim-docker-tools'
+
 " clojure
 Plug 'tpope/vim-fireplace',                        { 'for': 'clojure' }
 Plug 'tpope/vim-salve',                            { 'for': 'clojure' }
@@ -226,6 +229,8 @@ noremap <leader>t :TagbarToggle<cr>
 noremap <leader>gb :Gblame<cr>
 noremap <leader>go :Goyo<cr>
 noremap <leader>u :RunTests<cr>
+noremap <leader>do :DockerToolsOpen<cr>
+noremap <leader>dc :DockerToolsClose<cr>
 noremap <leader>d :normal iimport ipdb; ipdb.set_trace()<ESC>
 noremap <leader>q :q<cr>
 noremap <leader>w :w<cr>
