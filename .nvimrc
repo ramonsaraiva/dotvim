@@ -1,5 +1,4 @@
 filetype off
-set termguicolors
 
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -142,6 +141,7 @@ augroup colorextend
     autocmd FileType python call onedark#extend_highlight("Special", { "gui": "italic" })
 augroup END
 
+set termguicolors
 set t_Co=256
 set colorcolumn=80,90,100
 set background=dark
@@ -218,8 +218,8 @@ noremap <leader>rc :vsplit $MYVIMRC<cr>
 noremap <leader>rx :vsplit ~/.cfg/.Xresources<cr>
 noremap <leader>rxs :!xrdb ~/.cfg/.Xresources<cr>
 noremap <leader>ra :vsplit ~/.cfg/.alacritty.yml<cr>
-noremap <leader>pr :!cp -rf ~/.cfg/.pr_template /tmp/.pr_template<cr><cr>:vsplit /tmp/.pr_template<cr>:Goyo<cr>
-noremap <leader>jt :!cp -rf ~/.cfg/.jira_template /tmp/.jira_template<cr><cr>:vsplit /tmp/.jira_template<cr>:Goyo<cr>
+noremap <leader>pr :!cp -rf ~/.cfg/.pr_template.md /tmp/.pr_template.md<cr><cr>:vsplit /tmp/.pr_template.md<cr>:Goyo<cr>
+noremap <leader>jt :!cp -rf ~/.cfg/.jira_template.md /tmp/.jira_template.md<cr><cr>:vsplit /tmp/.jira_template.md<cr>:Goyo<cr>
 noremap <leader>n :NERDTree<cr>
 noremap <leader>f :Ack<space>
 noremap <leader>t :TagbarToggle<cr>
