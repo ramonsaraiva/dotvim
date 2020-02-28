@@ -29,10 +29,10 @@ Plug 'lepture/vim-jinja'
 Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim',          { 'for': ['html', 'jinja'] }
 Plug 'tpope/vim-surround'
-Plug 'vim-python/python-syntax'
-" Plug 'ehamberg/vim-cute-python'
+Plug 'vim-python/python-syntax', { 'for': 'python' }
+" Plug 'ehamberg/vim-cute-python' not sure about ligatures..
 
 " colorschemes
 Plug 'altercation/vim-colors-solarized'
@@ -56,9 +56,9 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'clojure-vim/async-clj-omni',                 { 'for': 'clojure' }
 
 " javascript
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'w0rp/ale'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx',             { 'for': 'javascript' }
+Plug 'w0rp/ale',                { 'for': 'javascript' }
 
 " elixir
 Plug 'elixir-editors/vim-elixir',    {'for': 'elixir'}
@@ -98,7 +98,7 @@ set incsearch
 set number
 set ruler
 if has('macunix') == 0
-    " relativenumber is really slow on macvim
+    " relativenumber is really slow on mac
     set relativenumber
 endif
 
@@ -115,8 +115,6 @@ syntax on
 
 autocmd FileType python set autoindent
 autocmd FileType python set smartindent
-autocmd FileType python set textwidth=79
-autocmd FileType python set colorcolumn=79
 
 autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType css set tabstop=2 shiftwidth=2 softtabstop=2
@@ -145,7 +143,7 @@ augroup colorextend
 augroup END
 
 set t_Co=256
-set colorcolumn=80,90
+set colorcolumn=80,90,100
 set background=dark
 colorscheme onedark
 set laststatus=2
