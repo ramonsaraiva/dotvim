@@ -15,6 +15,7 @@ Plug 'neomake/neomake'
 " Plug 'pbogut/deoplete-elm',   { 'for': 'elm' }
 Plug 'ervandew/supertab'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'psf/black', { 'branch': 'stable', 'for': 'python' }
 
 " ui
 Plug 'vim-airline/vim-airline'
