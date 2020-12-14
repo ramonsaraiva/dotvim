@@ -15,6 +15,7 @@ Plug 'neomake/neomake'
 " Plug 'pbogut/deoplete-elm',   { 'for': 'elm' }
 Plug 'ervandew/supertab'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'psf/black', { 'branch': 'stable', 'for': 'python' }
 
 " ui
@@ -178,8 +179,13 @@ autocmd! BufWritePost * Neomake
 let mapleader=','
 
 " deoplete
-let g:python_host_prog = '/home/ramon/.pyenv/versions/2.7.17/bin/python'
-let g:python3_host_prog = '/home/ramon/.pyenv/versions/3.8.1/bin/python'
+if has('macunix') == 0
+    let g:python_host_prog = '/home/ramon/.pyenv/versions/2.7.17/bin/python'
+    let g:python3_host_prog = '/home/ramon/.pyenv/versions/3.8.1/bin/python'
+else
+    let g:python_host_prog = '/Users/ramonsaraiva/.pyenv/versions/2.7.17/bin/python'
+    let g:python3_host_prog = '/Users/ramonsaraiva/.pyenv/versions/3.8.1/bin/python'
+endif
 
 if has('macunix') == 0
     " deoplete is PROBABLY also slow on mac
