@@ -35,7 +35,7 @@ Plug 'godlygeek/tabular'
 Plug 'mattn/emmet-vim',          { 'for': ['html', 'jinja'] }
 Plug 'tpope/vim-surround'
 Plug 'vim-python/python-syntax', { 'for': 'python' }
-" Plug 'ehamberg/vim-cute-python' not sure about ligatures..
+Plug 'ehamberg/vim-cute-python'
 
 " colorschemes
 Plug 'altercation/vim-colors-solarized'
@@ -176,9 +176,12 @@ set formatoptions-=t
 " neomake
 autocmd! BufWritePost * Neomake
 
+" black
+autocmd BufWritePost *.py silent! execute ':Black'
+
 let mapleader=','
 
-" deoplete
+" deoplete/coc
 if has('macunix') == 0
     let g:python_host_prog = '/home/ramon/.pyenv/versions/2.7.17/bin/python'
     let g:python3_host_prog = '/home/ramon/.pyenv/versions/3.8.1/bin/python'
@@ -194,6 +197,9 @@ endif
 let g:deoplete#keyword_patterns = {}
 let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 set completeopt-=preview
+
+" semshi
+let g:semshi#mark_selected_nodes = 0
 
 " nerdtree
 let NERDTreeChDirMode = 2
