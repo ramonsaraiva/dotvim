@@ -8,11 +8,13 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 
 " syntax
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neomake/neomake'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
-Plug 'pbogut/deoplete-elm',   { 'for': 'elm' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'zchee/deoplete-jedi'
+" Plug 'pbogut/deoplete-elm',   { 'for': 'elm' }
 Plug 'ervandew/supertab'
+Plug 'ludovicchabant/vim-gutentags'
 
 " ui
 Plug 'vim-airline/vim-airline'
@@ -59,8 +61,9 @@ Plug 'clojure-vim/async-clj-omni',                 { 'for': 'clojure' }
 
 " javascript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx',             { 'for': 'javascript' }
+Plug 'chemzqm/vim-jsx-improve', { 'for': 'javascript' } 
 Plug 'w0rp/ale',                { 'for': 'javascript' }
+Plug 'Galooshi/vim-import-js',  { 'for': 'javascript' }
 
 " elixir
 Plug 'elixir-editors/vim-elixir',    {'for': 'elixir'}
@@ -71,6 +74,9 @@ Plug 'ElmCast/elm-vim',              {'for': 'elm'}
 
 " vue
 Plug 'posva/vim-vue',                {'for': 'vue'}
+
+" terraform
+Plug 'hashivim/vim-terraform', {'for': 'terraform'}
 
 
 call plug#end()
@@ -83,6 +89,7 @@ else
     language en_US.UTF-8
 endif
 
+set lazyredraw
 set title
 set nobackup
 set nowritebackup
@@ -123,6 +130,7 @@ autocmd FileType css set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType elm set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType vue set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType tf set tabstop=2 shiftwidth=2 softtabstop=2
 
 set backspace=indent,eol,start
 
@@ -213,6 +221,12 @@ let g:airline_powerline_fonts = 1
 
 " emmet
 let g:user_emmet_leader_key=','
+
+" js import
+let g:js_file_import_sort_after_insert = 1
+let g:js_file_import_omit_semicolon = 1
+let g:js_file_import_from_root = 1
+let g:js_file_import_root = getcwd().'/src'
 
 " mappings
 noremap <space> viw
