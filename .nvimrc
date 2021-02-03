@@ -282,6 +282,24 @@ augroup reload_vimrc
     autocmd! BufWritePost $MYVIMRC,$MYGVIMRC nested source %
 augroup END
 
+let g:firenvim_config = { 
+    \ 'globalSettings': {
+        \ 'alt': 'all',
+    \  },
+    \ 'localSettings': {
+        \ '.*': {
+            \ 'cmdline': 'neovim',
+            \ 'content': 'text',
+            \ 'priority': 0,
+            \ 'selector': 'textarea',
+            \ 'takeover': 'always',
+        \ },
+    \ }
+\ }
+
+let fc = g:firenvim_config['localSettings']
+let fc['.*chrome\.todoist\.com.*'] = { 'takeover': 'never', 'priority': 1 }
+
 " firenvim
 function! s:IsFirenvimActive(event) abort
   if !exists('*nvim_get_chan_info')
