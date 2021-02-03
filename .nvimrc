@@ -35,7 +35,8 @@ Plug 'godlygeek/tabular'
 Plug 'mattn/emmet-vim',          { 'for': ['html', 'jinja'] }
 Plug 'tpope/vim-surround'
 Plug 'vim-python/python-syntax', { 'for': 'python' }
-Plug 'ehamberg/vim-cute-python'
+" Plug 'ehamberg/vim-cute-python'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 " colorschemes
 Plug 'altercation/vim-colors-solarized'
@@ -184,7 +185,7 @@ let mapleader=','
 " deoplete/coc
 if has('macunix') == 0
     let g:python_host_prog = '/home/ramon/.pyenv/versions/2.7.17/bin/python'
-    let g:python3_host_prog = '/home/ramon/.pyenv/versions/3.8.1/bin/python'
+    let g:python3_host_prog = '/home/ramon/.pyenv/versions/3.8.6/bin/python'
 else
     let g:python_host_prog = '/Users/ramonsaraiva/.pyenv/versions/2.7.17/bin/python'
     let g:python3_host_prog = '/Users/ramonsaraiva/.pyenv/versions/3.8.1/bin/python'
@@ -197,6 +198,9 @@ endif
 let g:deoplete#keyword_patterns = {}
 let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 set completeopt-=preview
+
+" coc
+let g:coc_disable_startup_warning = 1
 
 " semshi
 let g:semshi#mark_selected_nodes = 0
@@ -277,3 +281,26 @@ augroup reload_vimrc
     autocmd!
     autocmd! BufWritePost $MYVIMRC,$MYGVIMRC nested source %
 augroup END
+
+" firenvim
+function! s:IsFirenvimActive(event) abort
+  if !exists('*nvim_get_chan_info')
+    return 0
+  endif
+  let l:ui = nvim_get_chan_info(a:event.chan)
+  return has_key(l:ui, 'client') && has_key(l:ui.client, 'name') &&
+      \ l:ui.client.name =~? 'Firenvim'
+endfunction
+
+function! OnUIEnter(event) abort
+  if s:IsFirenvimActive(a:event)
+    set guifont=Monospaced:h12
+    set laststatus=0
+    set showtabline=0
+    set norelativenumber
+    set nonumber
+    au BufEnter github.com_*.txt set filetype=markdown
+  endif
+endfunction
+
+autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
