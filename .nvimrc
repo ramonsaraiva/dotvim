@@ -6,6 +6,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree', { 'do': 'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'pwntester/octo.nvim'
 
 " syntax
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -276,6 +280,8 @@ noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
+
+map <C-p> :Telescope find_files<cr>
 
 augroup reload_vimrc
     autocmd!
