@@ -53,8 +53,9 @@ Plug 'cormacrelf/vim-colors-github'
 Plug 'junegunn/seoul256.vim'
 Plug 'w0ng/vim-hybrid'
 
-" other
+" functional
 Plug 'kevinhui/vim-docker-tools'
+Plug 'vim-test/vim-test'
 
 " clojure
 Plug 'tpope/vim-fireplace',                        { 'for': 'clojure' }
@@ -229,6 +230,18 @@ let g:js_file_import_omit_semicolon = 1
 let g:js_file_import_from_root = 1
 let g:js_file_import_root = getcwd().'/src'
 
+" vim-test
+let test#strategy = "neovim"
+let g:test#python#djangotest#executable = 'docker-compose exec django-'.split(getcwd(), '/')[-1].' python manage.py test'
+map <C-t>n :TestNearest<cr>
+map <C-t>f :TestFile<cr>
+map <C-t>l :TestLast<cr>
+map <C-t>v :TestVisit<cr>
+
+" dockertools
+let g:dockertools_default_all = 0
+
+
 " mappings
 noremap <space> viw
 noremap <leader>a =ip
@@ -310,3 +323,9 @@ function! OnUIEnter(event) abort
 endfunction
 
 autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
+
+" coc
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
