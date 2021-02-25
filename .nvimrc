@@ -8,7 +8,8 @@ Plug 'mileszs/ack.vim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'pwntester/octo.nvim'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'francoiscabrol/ranger.vim'
 
 " syntax
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -56,6 +57,7 @@ Plug 'w0ng/vim-hybrid'
 " functional
 Plug 'kevinhui/vim-docker-tools'
 Plug 'vim-test/vim-test'
+Plug 'pwntester/octo.nvim'
 
 " clojure
 Plug 'tpope/vim-fireplace',                        { 'for': 'clojure' }
@@ -184,8 +186,8 @@ if has('macunix') == 0
     let g:python_host_prog = '/home/ramon/.pyenv/versions/neovim/bin/python'
     let g:python3_host_prog = '/home/ramon/.pyenv/versions/neovim3/bin/python'
 else
-    let g:python_host_prog = '/Users/ramonsaraiva/.pyenv/versions/2.7.17/bin/python'
-    let g:python3_host_prog = '/Users/ramonsaraiva/.pyenv/versions/3.8.1/bin/python'
+    let g:python_host_prog = '/Users/ramonsaraiva/.pyenv/shims/python'
+    let g:python3_host_prog = '/Users/ramonsaraiva/.pyenv/shims/python'
 endif
 
 set completeopt=longest,menuone
@@ -232,7 +234,8 @@ let g:js_file_import_root = getcwd().'/src'
 
 " vim-test
 let test#strategy = "neovim"
-let g:test#python#djangotest#executable = 'docker-compose exec django-'.split(getcwd(), '/')[-1].' python manage.py test'
+let django_service = trim(system('docker-compose ps --service | grep django'))
+let g:test#python#djangotest#executable = 'docker-compose exec '.django_service.' python manage.py test'
 map <C-t>n :TestNearest<cr>
 map <C-t>f :TestFile<cr>
 map <C-t>l :TestLast<cr>
@@ -241,6 +244,11 @@ map <C-t>v :TestVisit<cr>
 " dockertools
 let g:dockertools_default_all = 0
 
+" ranger
+let g:ranger_map_keys = 0
+let g:NERDTreeHijackNetrw = 0
+let g:ranger_replace_netrw = 1
+map <leader>r :Ranger<CR>
 
 " mappings
 noremap <space> viw
