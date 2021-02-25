@@ -4,7 +4,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " files
 Plug 'scrooloose/nerdtree', { 'do': 'NERDTreeToggle' }
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -31,9 +30,11 @@ Plug 'lepture/vim-jinja'
 Plug 'majutsushi/tagbar'
 Plug 'luochen1990/rainbow'
 Plug 'lepture/vim-jinja'
+Plug 'ap/vim-css-color'
 
 " text
 Plug 'junegunn/goyo.vim'
+Plug 'npxbr/glow.nvim', {'do': ':GlowInstall'}
 Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
 Plug 'mattn/emmet-vim',          { 'for': ['html', 'jinja'] }
@@ -215,12 +216,6 @@ let NERDTreeIgnore = ['\.vim$', '\~$', '\.pyc$', '\.swp$', 'harvest_*', 'node_mo
 let NERDTreeSortOrder = ['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks = 1
 
-" ctrlp
-let g:ctrlp_user_command = 'rg --files %s'
-let g:ctrlp_use_caching = 0
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_switch_bufffer = 'et'
-
 " ack
 let g:ackprg = 'rg -S --vimgrep --no-heading'
 
@@ -270,6 +265,7 @@ noremap <leader>d :normal iimport ipdb; ipdb.set_trace()<ESC>
 noremap <leader>q :q<cr>
 noremap <leader>w :w<cr>
 noremap <silent> ,/ :nohlsearch<CR>
+noremap <leader>o :Octo<space>
 
 " tabs and panes
 noremap <leader>v <C-w>v<cr>
