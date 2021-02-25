@@ -32,7 +32,7 @@ Plug 'ap/vim-css-color'
 
 " text
 Plug 'junegunn/goyo.vim'
-Plug 'npxbr/glow.nvim', {'do': ':GlowInstall'}
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
 Plug 'mattn/emmet-vim',          { 'for': ['html', 'jinja'] }
@@ -263,6 +263,7 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 
 map <C-p> :Telescope find_files<cr>
+noremap <leader>md :MarkdownPreview<cr>
 
 augroup reload_vimrc
     autocmd!
