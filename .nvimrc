@@ -16,6 +16,7 @@ Plug 'neomake/neomake'
 Plug 'ervandew/supertab'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'vim-python/python-syntax'
 Plug 'psf/black', { 'branch': 'stable', 'for': 'python' }
 
 " ui
@@ -144,18 +145,12 @@ let g:gruvbox_contrast_dark = 'soft'
 let g:onedark_termcolors = 256
 let g:onedark_terminal_italics = 1
 
-" this is experimental
-" TODO: probably use python-specific `syns`
-augroup colorextend
-    autocmd!
-    autocmd FileType python call onedark#extend_highlight("Identifier", { "gui": "italic" })
-    autocmd FileType python call onedark#extend_highlight("Repeat", { "gui": "italic" })
-    autocmd FileType python call onedark#extend_highlight("Type", { "gui": "italic" })
-    autocmd FileType python call onedark#extend_highlight("Define", { "gui": "italic" })
-    autocmd FileType python call onedark#extend_highlight("Structure", { "gui": "italic" })
-    autocmd FileType python call onedark#extend_highlight("Constant", { "gui": "italic" })
-    autocmd FileType python call onedark#extend_highlight("Special", { "gui": "italic" })
-augroup END
+function Highlights()
+    hi semshiSelf cterm=italic gui=italic
+    hi semshiBuiltin cterm=italic gui=italic
+    hi Comment cterm=italic gui=italic
+endfunction
+autocmd FileType python call Highlights()
 
 set termguicolors
 set t_Co=256
