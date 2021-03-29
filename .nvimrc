@@ -13,7 +13,6 @@ Plug 'francoiscabrol/ranger.vim'
 
 " syntax
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neomake/neomake'
 Plug 'ervandew/supertab'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
@@ -29,7 +28,6 @@ Plug 'lepture/vim-jinja'
 Plug 'majutsushi/tagbar'
 Plug 'luochen1990/rainbow'
 Plug 'lepture/vim-jinja'
-Plug 'ap/vim-css-color'
 
 " text
 Plug 'junegunn/goyo.vim'
@@ -39,20 +37,9 @@ Plug 'godlygeek/tabular'
 Plug 'mattn/emmet-vim',          { 'for': ['html', 'jinja'] }
 Plug 'tpope/vim-surround'
 Plug 'vim-python/python-syntax', { 'for': 'python' }
-" Plug 'ehamberg/vim-cute-python'
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 " colorschemes
-Plug 'altercation/vim-colors-solarized'
-Plug 'morhetz/gruvbox'
-Plug 'tomasr/molokai'
 Plug 'joshdick/onedark.vim'
-Plug 'dracula/vim'
-Plug 'gosukiwi/vim-atom-dark'
-Plug 'nightsense/vimspectr'
-Plug 'cormacrelf/vim-colors-github'
-Plug 'junegunn/seoul256.vim'
-Plug 'w0ng/vim-hybrid'
 
 " functional
 Plug 'kevinhui/vim-docker-tools'
@@ -69,10 +56,9 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'clojure-vim/async-clj-omni',                 { 'for': 'clojure' }
 
 " javascript
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'chemzqm/vim-jsx-improve', { 'for': 'javascript' } 
-Plug 'w0rp/ale',                { 'for': 'javascript' }
-Plug 'Galooshi/vim-import-js',  { 'for': 'javascript' }
+Plug 'yuezk/vim-js'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'maxmellon/vim-jsx-pretty'
 
 " elixir
 Plug 'elixir-editors/vim-elixir',    {'for': 'elixir'}
@@ -98,7 +84,7 @@ else
     language en_US.UTF-8
 endif
 
-set lazyredraw
+"set lazyredraw
 set title
 set nobackup
 set nowritebackup
@@ -115,10 +101,6 @@ set incsearch
 " line numbers
 set number
 set ruler
-if has('macunix') == 0
-    " relativenumber is really slow on mac
-    set relativenumber
-endif
 
 " tab as spaces
 set tabstop=4
@@ -144,7 +126,6 @@ autocmd FileType tf set tabstop=2 shiftwidth=2 softtabstop=2
 set backspace=indent,eol,start
 
 " colorscheme settings
-let g:gruvbox_contrast_dark = 'soft'
 let g:onedark_termcolors = 256
 let g:onedark_terminal_italics = 1
 
@@ -174,26 +155,24 @@ set mouse=a
 
 set formatoptions-=t
 
-" neomake
-autocmd! BufWritePost * Neomake
-
 " black
 autocmd BufWritePost *.py silent! execute ':Black'
 
 let mapleader=','
 
 if has('macunix') == 0
-    let g:python_host_prog = '/home/ramon/.pyenv/versions/neovim/bin/python'
-    let g:python3_host_prog = '/home/ramon/.pyenv/versions/neovim3/bin/python'
+    let g:python_host_prog = '/home/ramon/.pyenv/versions/2.7.18/bin/python'
+    let g:python3_host_prog = '/home/ramon/.pyenv/versions/3.9.2/bin/python'
 else
-    let g:python_host_prog = '/Users/ramonsaraiva/.pyenv/shims/python'
-    let g:python3_host_prog = '/Users/ramonsaraiva/.pyenv/shims/python'
+    let g:python_host_prog = '/Users/ramonsaraiva/.pyenv/2.7.18/python'
+    let g:python3_host_prog = '/Users/ramonsaraiva/.pyenv/3.9.2/python'
 endif
 
 set completeopt=longest,menuone
 
 " coc
-let g:coc_disable_startup_warning = 1
+let g:coc_disable_startup_warning = 0
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier']
 
 " semshi
 let g:semshi#mark_selected_nodes = 0
@@ -226,12 +205,6 @@ let g:airline_powerline_fonts = 1
 " emmet
 let g:user_emmet_leader_key=','
 
-" js import
-let g:js_file_import_sort_after_insert = 1
-let g:js_file_import_omit_semicolon = 1
-let g:js_file_import_from_root = 1
-let g:js_file_import_root = getcwd().'/src'
-
 " vim-test
 let test#strategy = "neovim"
 let django_service = trim(system('docker-compose ps --service | grep django'))
@@ -257,6 +230,7 @@ noremap <leader>rc :vsplit $MYVIMRC<cr>
 noremap <leader>rx :vsplit ~/.cfg/.Xresources<cr>
 noremap <leader>rxs :!xrdb ~/.cfg/.Xresources<cr>
 noremap <leader>ra :vsplit ~/.cfg/.alacritty.yml<cr>
+noremap <leader>kc :vsplit ~/.cfg/kitty.conf<cr>
 noremap <leader>pr :!cp -rf ~/.cfg/.pr_template.md /tmp/.pr_template.md<cr><cr>:vsplit /tmp/.pr_template.md<cr>:Goyo<cr>
 noremap <leader>jt :!cp -rf ~/.cfg/.jira_template.md /tmp/.jira_template.md<cr><cr>:vsplit /tmp/.jira_template.md<cr>:Goyo<cr>
 noremap <leader>n :NERDTree<cr>
@@ -290,47 +264,6 @@ augroup reload_vimrc
     autocmd!
     autocmd! BufWritePost $MYVIMRC,$MYGVIMRC nested source %
 augroup END
-
-let g:firenvim_config = { 
-    \ 'globalSettings': {
-        \ 'alt': 'all',
-    \  },
-    \ 'localSettings': {
-        \ '.*': {
-            \ 'cmdline': 'neovim',
-            \ 'content': 'text',
-            \ 'priority': 0,
-            \ 'selector': 'textarea',
-            \ 'takeover': 'always',
-        \ },
-    \ }
-\ }
-
-let fc = g:firenvim_config['localSettings']
-let fc['.*chrome\.todoist\.com.*'] = { 'takeover': 'never', 'priority': 1 }
-
-" firenvim
-function! s:IsFirenvimActive(event) abort
-  if !exists('*nvim_get_chan_info')
-    return 0
-  endif
-  let l:ui = nvim_get_chan_info(a:event.chan)
-  return has_key(l:ui, 'client') && has_key(l:ui.client, 'name') &&
-      \ l:ui.client.name =~? 'Firenvim'
-endfunction
-
-function! OnUIEnter(event) abort
-  if s:IsFirenvimActive(a:event)
-    set guifont=Monospaced:h12
-    set laststatus=0
-    set showtabline=0
-    set norelativenumber
-    set nonumber
-    au BufEnter github.com_*.txt set filetype=markdown
-  endif
-endfunction
-
-autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
 
 " coc
 nmap <silent> gd <Plug>(coc-definition)
